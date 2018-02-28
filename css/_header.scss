@@ -1,0 +1,74 @@
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 6000;
+  background-color: rgba(0, 0, 0, .3);
+  padding: 10px 0;
+  .logo {
+    float: left;
+    color: #fff;
+    font-size: 1.4rem;
+  }
+  .menu {
+    float: right;
+    @media (max-width: 768px) {
+      display: none;
+    }
+    li {
+      display: inline-block;
+      vertical-align: middle;
+      padding: 5px 10px;
+    }
+    a {
+      display: inline-block;
+      color: #fff;
+      text-decoration: none;
+      position: relative;
+      &:after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 1px;
+        background-color: #fff;
+        transition: width .3s $easeInOutSine;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -3px;
+        margin: auto;
+      }
+      &:hover:after {
+        width: 100%;
+      }
+    }
+
+  }
+  .hamburger {
+    display: none;
+    float: right;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    color: #fff;
+    .icon-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      font-size: 30px;
+    }
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+}

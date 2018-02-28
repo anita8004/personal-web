@@ -1,0 +1,348 @@
+.sect_banner {
+  width: 100%;
+  height: 100vh;
+  height: 100vmin;
+  position: relative;
+  overflow: hidden;
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    margin: auto;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    background-color: #fff;
+    padding: 0 2rem 1rem 2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+    font-family: $font1;
+    .pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      position: relative;
+      overflow: hidden;
+      margin: -60px auto 10px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, .5);
+      img {
+        width: 100%;
+        height: 100%;
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+    .name {
+      font-size: 4rem;
+    }
+    .job {
+      font-size: 4rem;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .scrollDown {
+      color: #000;
+      text-decoration: none;
+      font-size: 4rem;
+      line-height: 0;
+    } //    .left_content,
+    //    .right_content {
+    //      display: flex;
+    //      flex-direction: column;
+    //      align-content: center;
+    //      justify-content: center;
+    //    }
+    //    .left_content {
+    //      width: 35%;
+    //      text-align: center;
+    //      padding: 15px 20px 15px 40px;
+    //
+    //    }
+    //    .right_content {
+    //      width: 65%;
+    //      padding: 15px 40px 15px 20px;
+    //    }
+    .list-head {
+      font-size: 1.5rem;
+      color: #000;
+      margin-bottom: 10px;
+      span {
+        display: none;
+        margin-right: 5px;
+        font-size: 1rem;
+      }
+    }
+
+    .links {
+      li {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0 10px 0 0;
+      }
+      a {
+        display: block;
+        color: #733b07;
+        font-size: 1rem;
+        opacity: .5;
+        transition: opacity .3s $easeInOutSine;
+        text-decoration: none;
+        &:hover,
+        &:active {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      .name,
+      .job {
+        font-size: 3rem;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    .card {
+      .name,
+      .job {
+        font-size: 2rem;
+      }
+    }
+  }
+}
+
+.sect {
+  padding: 8vmin 0;
+  background-color: #fff;
+  .title {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 6vmin;
+    position: relative;
+    font-family: $font1;
+    &:after {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 3px;
+      background-color: $mc;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -20px;
+      margin: auto;
+    }
+  }
+}
+
+
+.sect_experence {
+  text-align: center;
+  .list {
+    display: inline-block;
+    margin: auto;
+    list-style: circle;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    li {
+      text-align: left;
+    }
+  }
+}
+
+
+.list_sty1 {
+  font-size: 0;
+  display: flex;
+  justify-content: center;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+    text-align: center;
+    padding: 5vmin;
+    font-family: $font1;
+  }
+  .big_tit {
+    font-size: 4rem;
+    font-weight: bolder;
+    line-height: 1;
+  }
+  .tit {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  .view {
+    display: inline-block;
+    padding: 10px;
+    color: $mc;
+    text-decoration: none;
+    font-size: .9rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .list_sty1 {
+    li {
+      padding: 5vmin 3vmin;
+    }
+    .big_tit {
+      font-size: 3rem;
+    }
+    .tit {
+      font-size: 1rem;
+    }
+    .view {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .list_sty1 {
+    flex-wrap: wrap;
+    li {
+      width: 50%;
+    }
+    .view {
+      margin-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 380px) {
+  .list_sty1 {
+    flex-wrap: wrap;
+    li {
+      width: 100%;
+    }
+  }
+}
+
+
+.sect_project {
+  text-align: center;
+  .more {
+    display: inline-block;
+    padding: 10px;
+    color: $mc;
+    text-decoration: none;
+    font-family: $font1;
+    font-size: .9rem;
+    margin-top: 6vmin;
+  }
+}
+
+.pro_list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0;
+  li {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    height: 35vh;
+    padding: 1vmin;
+    @media (max-width: 991px) {
+      width: 50%;
+    }
+    @media (max-width: 480px) {
+      width: 100%;
+    }
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      &:before {
+        content: attr(data-tit); //display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        color: #fff;
+      }
+      &:hover {
+        img {
+          opacity: .7;
+        }
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+      transition: opacity .3s $easeInOutSine;
+    }
+  }
+}
+
+.sect_contact {
+  width: 100%;
+  height: 600px;
+  height: 60vmin;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  padding: 0;
+  .container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .content {
+    width: 60%;
+    max-width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    text-align: center;
+  }
+  .title {
+    color: #fff;
+    margin-bottom: 3vmin;
+    font-size: 4rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, .3);
+    &:after {
+      display: none;
+    }
+    @media (max-width: 991px) {
+      font-size: 3rem;
+    }
+    @media (max-width: 480px) {
+      font-size: 2rem;
+    }
+  }
+  .mail {
+    display: block;
+    width: 80%;
+    padding: 8px 5px;
+    color: #fff;
+    text-decoration: none;
+    background-color: $mc;
+    margin: auto;
+    font-weight: lighter;
+    transition: background-color .3s $easeInOutSine;
+    &:hover {
+      background-color: lighten($mc, 5%);
+    }
+  }
+}
