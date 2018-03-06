@@ -72,11 +72,15 @@
   }
 }
 
-
 @media (max-width: 768px) {
   header{
+    .hamburger{
+      transition: transform .5s $easeInOutSine;
+      &.open{
+        transform: rotate(90deg);
+      }
+    }
     .menu{
-      //display: none;
       display: flex;
       align-items: center;
       float: none!important;
@@ -86,7 +90,6 @@
       background-color: rgba(0,0,0,.8);
       transform-origin: center top;
       transform: rotateX(90deg);
-      transition: transform .5s $easeInOutSine;
       position: absolute;
       top: 40px;
       left: 0;
@@ -106,7 +109,6 @@
         }
       }
       &.open{
-        transform: rotateX(0deg);
         position: relative;
         top: 0;
       }
