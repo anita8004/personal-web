@@ -1,7 +1,6 @@
 @charset "UTF-8";
-@import "//fonts.googleapis.com/earlyaccess/notosanstc.css";
 @import "https://fonts.googleapis.com/css?family=Krona+One";
-@import "https://i.icomoon.io/public/temp/24ae086037/project_s/style.css";
+@import "https://i.icomoon.io/public/temp/5116cd783b/project_s/style.css";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -2580,6 +2579,19 @@ body {
   line-height: 1.5;
   font-family: "Noto Sans TC", "Arial", "微軟正黑體"; }
 
+/*footer置底*/
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto; }
+
+.footer {
+  grid-row-start: 2;
+  grid-row-end: 3; }
+
 /*common*/
 .container {
   width: 90%;
@@ -2671,12 +2683,34 @@ img {
       #header .hamburger {
         display: block; } }
 
+footer {
+  background-color: #2F2E2E;
+  color: rgba(255, 255, 255, 0.7); }
+
+.copyright {
+  padding: 10px;
+  text-align: center; }
+
 .sect_banner {
   width: 100%;
   height: 100vh;
   height: 100vmin;
   position: relative;
   overflow: hidden; }
+  .sect_banner::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 2;
+    background: url(../images/dot.png) repeat;
+    background-size: 20px; }
   .sect_banner .container {
     position: absolute;
     top: 0;
@@ -2703,6 +2737,7 @@ img {
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: 10;
     -webkit-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
@@ -2727,7 +2762,7 @@ img {
     .sect_banner .card .name {
       font-size: 4rem; }
     .sect_banner .card .job {
-      font-size: 4rem;
+      font-size: 3rem;
       line-height: 1;
       margin-bottom: 1rem; }
     .sect_banner .card .scrollDown {
@@ -2963,3 +2998,98 @@ img {
     transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
     .sect_contact .mail:hover {
       background-color: #f49259; }
+
+.page_banner {
+  width: 100%;
+  height: 400px;
+  overflow: hidden; }
+
+.page_wrap {
+  background-color: #fff; }
+
+.page_title {
+  padding: 6vmin 0 8vmin;
+  text-align: center;
+  font-size: 1.5rem;
+  position: relative; }
+  .page_title::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #F28241;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 6vmin;
+    margin: auto; }
+
+#about .page_content {
+  max-width: 900px;
+  margin: auto;
+  text-align: justify;
+  text-justify: auto;
+  margin-bottom: 6vmin; }
+  #about .page_content p {
+    margin-bottom: 10px; }
+
+/* 作品列表 */
+.works_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 6vmin; }
+  .works_list li {
+    width: 25%;
+    padding: 15px; }
+    @media (max-width: 1280px) {
+      .works_list li {
+        width: 33.333%; } }
+    @media (max-width: 991px) {
+      .works_list li {
+        width: 50%; } }
+    @media (max-width: 600px) {
+      .works_list li {
+        width: 100%; } }
+    .works_list li figure {
+      width: 100%;
+      height: 22vh;
+      overflow: hidden;
+      position: relative; }
+      .works_list li figure img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover; }
+      .works_list li figure .cover {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        right: 15px;
+        bottom: 15px;
+        margin: auto;
+        padding: 10px;
+        z-index: 5;
+        background-color: rgba(255, 255, 255, 0.7);
+        overflow: hidden; }
+    .works_list li a {
+      display: block;
+      text-decoration: none;
+      color: #000; }
