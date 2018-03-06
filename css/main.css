@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Krona+One";
-@import "https://i.icomoon.io/public/temp/5116cd783b/project_s/style.css";
+@import url(icomoon/style.css);
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -2596,7 +2596,8 @@ body {
 .container {
   width: 90%;
   max-width: 1440px;
-  margin: 0 auto; }
+  margin: 0 auto;
+  position: relative; }
 
 .container:before {
   content: "";
@@ -2628,12 +2629,10 @@ img {
   #header .logo {
     float: left;
     color: #fff;
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+    line-height: 40px; }
   #header .menu {
     float: right; }
-    @media (max-width: 768px) {
-      #header .menu {
-        display: none; } }
     #header .menu li {
       display: inline-block;
       vertical-align: middle;
@@ -2670,7 +2669,8 @@ img {
     padding: 0;
     margin: 0;
     outline: 0;
-    color: #fff; }
+    color: #fff;
+    cursor: pointer; }
     #header .hamburger .icon-menu {
       position: absolute;
       top: 0;
@@ -2678,10 +2678,54 @@ img {
       right: 0;
       bottom: 0;
       margin: auto;
-      font-size: 30px; }
+      font-size: 30px;
+      line-height: 40px; }
     @media (max-width: 768px) {
       #header .hamburger {
         display: block; } }
+
+@media (max-width: 768px) {
+  header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: none !important;
+    width: 100%;
+    height: calc(100vh - 60px);
+    clear: both;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-transform-origin: center top;
+    -ms-transform-origin: center top;
+    transform-origin: center top;
+    -webkit-transform: rotateX(90deg);
+    transform: rotateX(90deg);
+    -webkit-transition: -webkit-transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: -webkit-transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -o-transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95), -webkit-transform 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    position: absolute;
+    top: 40px;
+    left: 0; }
+    header .menu ul, header .menu li, header .menu a {
+      width: 100%; }
+    header .menu li {
+      margin-bottom: 2rem; }
+    header .menu a {
+      display: block;
+      text-align: center;
+      padding: 5px;
+      font-size: 20px; }
+      header .menu a::after {
+        width: 40px !important; }
+    header .menu.open {
+      -webkit-transform: rotateX(0deg);
+      transform: rotateX(0deg);
+      position: relative;
+      top: 0; } }
 
 footer {
   background-color: #2F2E2E;
@@ -2733,7 +2777,7 @@ footer {
     -ms-flex-pack: center;
     justify-content: center;
     background-color: #fff;
-    padding: 0 2rem 1rem 2rem;
+    padding: 0 2rem 2rem 2rem;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -2795,12 +2839,18 @@ footer {
         opacity: 1; }
   @media (max-width: 768px) {
     .sect_banner .card .name,
-    .sect_banner .card .job {
+    .sect_banner .card .job,
+    .sect_banner .card .scrollDown {
       font-size: 3rem; } }
   @media (max-width: 480px) {
-    .sect_banner .card .name,
-    .sect_banner .card .job {
-      font-size: 2rem; } }
+    .sect_banner {
+      height: 100vh; }
+      .sect_banner .card {
+        padding-bottom: 1rem; }
+        .sect_banner .card .name,
+        .sect_banner .card .job,
+        .sect_banner .card .scrollDown {
+          font-size: 2rem; } }
 
 .sect {
   padding: 8vmin 0;
@@ -3027,8 +3077,6 @@ footer {
 #about .page_content {
   max-width: 900px;
   margin: auto;
-  text-align: justify;
-  text-justify: auto;
   margin-bottom: 6vmin; }
   #about .page_content p {
     margin-bottom: 10px; }
@@ -3062,6 +3110,9 @@ footer {
       height: 22vh;
       overflow: hidden;
       position: relative; }
+      @media (max-width: 600px) {
+        .works_list li figure {
+          height: 30vh; } }
       .works_list li figure img {
         width: 100%;
         height: 100%;
@@ -3088,8 +3139,19 @@ footer {
         padding: 10px;
         z-index: 5;
         background-color: rgba(255, 255, 255, 0.7);
-        overflow: hidden; }
+        overflow: hidden;
+        -webkit-box-shadow: 2px 2px 15px transparent;
+        box-shadow: 2px 2px 15px transparent;
+        -webkit-transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        -o-transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
     .works_list li a {
       display: block;
       text-decoration: none;
       color: #000; }
+    .works_list li:hover .cover {
+      -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
+      -webkit-transform: translateX(-2px) translateY(-2px);
+      -ms-transform: translateX(-2px) translateY(-2px);
+      transform: translateX(-2px) translateY(-2px); }

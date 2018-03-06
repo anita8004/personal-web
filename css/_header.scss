@@ -11,12 +11,10 @@
     float: left;
     color: #fff;
     font-size: 1.4rem;
+    line-height: 40px;
   }
   .menu {
     float: right;
-    @media (max-width: 768px) {
-      display: none;
-    }
     li {
       display: inline-block;
       vertical-align: middle;
@@ -44,7 +42,6 @@
         width: 100%;
       }
     }
-
   }
   .hamburger {
     display: none;
@@ -58,6 +55,7 @@
     margin: 0;
     outline: 0;
     color: #fff;
+    cursor: pointer;
     .icon-menu {
       position: absolute;
       top: 0;
@@ -66,9 +64,52 @@
       bottom: 0;
       margin: auto;
       font-size: 30px;
+      line-height: 40px;
     }
     @media (max-width: 768px) {
       display: block;
+    }
+  }
+}
+
+
+@media (max-width: 768px) {
+  header{
+    .menu{
+      //display: none;
+      display: flex;
+      align-items: center;
+      float: none!important;
+      width: 100%;
+      height: calc(100vh - 60px);
+      clear: both;
+      background-color: rgba(0,0,0,.8);
+      transform-origin: center top;
+      transform: rotateX(90deg);
+      transition: transform .5s $easeInOutSine;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      ul,li,a{
+        width: 100%;
+      }
+      li{
+        margin-bottom: 2rem;
+      }
+      a{
+        display: block;
+        text-align: center;
+        padding: 5px;
+        font-size: 20px;
+        &::after{
+          width: 40px!important;
+        }
+      }
+      &.open{
+        transform: rotateX(0deg);
+        position: relative;
+        top: 0;
+      }
     }
   }
 }
