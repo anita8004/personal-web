@@ -1,0 +1,208 @@
+/*作品aside*/
+
+#work .page_content{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.works_aside{
+  width: 350px;
+  min-height: 60vh;
+  flex: 1 1;
+  padding-right: 15px;
+}
+
+#work .works_list{
+  width: calc(100% - 350px);
+  flex: 3 1;
+  padding-left: 15px;
+}
+
+@media (max-width: 768px) {
+  .works_aside{
+    padding: 0 15px;
+    min-height: 0;
+  }
+  #work .works_list{
+    padding: 0;
+  }
+  .works_aside,#work .works_list{
+    width: 100%;
+    flex: inherit;
+  }
+}
+
+.aside_title{
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.aside_list{
+  margin-bottom: 3rem;
+  li{
+    border-left: 0 solid transparent;
+    transition: all .3s $easeInOutSine;
+    a{
+      display: block;
+      text-decoration: none;
+      color: #000000;
+      padding: 5px 10px;
+    }
+    &:hover,&.active{
+      background-color: #f1f1f1;
+      border-left: 3px solid $mc;
+    }
+  }
+}
+
+.works_aside .search{
+  position: relative;
+  margin-bottom: 15px;
+  .form-field{
+    width: 100%;
+    height: 35px;
+    padding: 5px 40px 5px 10px;
+    border: 1px solid $mc;
+    outline: 0;
+    &:focus{
+      box-shadow: 0 0 0 transparent;
+    }
+  }
+  .form-btn{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background-color: $mc;
+    color: #ffffff;
+    text-align: center;
+    border: 1px solid $mc;
+    outline: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    transition: background-color .3s $easeInOutSine;
+    &:hover{
+      background-color: #c04f0d;
+    }
+  }
+}
+
+.works_aside .keywords{
+  font-size: 0;
+  li{
+    display: inline-block;
+    vertical-align: top;
+    padding: 2px 8px;
+    margin: 0 5px 5px 0;
+    background-color: $mc;
+    color: #ffffff;
+    font-size: .9rem;
+    border-radius: 3px;
+    transition: background-color .3s $easeInOutSine;
+    a{
+      color: #ffffff;
+      text-decoration: none;
+    }
+    &:hover{
+      background-color: #c04f0d;
+    }
+  }
+}
+
+/* 作品列表 */
+
+.works_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 6vmin;
+  .item {
+    width: 25%;
+    //height: 25vh;
+    padding: 15px;
+    align-self: stretch;
+    @media (max-width: 1440px) {
+      width: 33.333%;
+    }
+    @media (max-width: 1080px) {
+      width: 50%;
+    }
+    @media (max-width: 560px) {
+      width: 100%;
+    }
+    a {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      position: relative;
+    }
+    figure {
+      width: 100%;
+      height: 10vh;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform .8s ease-in-out;
+      }
+    }
+
+    .item_title{
+      height: 50px;
+      font-size: 1rem;
+      line-height: 1.3;
+      padding: 8px 15px 5px;
+      overflow : hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+
+    .keywords{
+      padding: 5px 15px;
+      font-size: 0;
+      align-self: end;
+      //position: absolute;
+      //left: 0;
+      //bottom: 0;
+      li{
+        display: inline-block;
+        vertical-align: top;
+        padding: 2px 0;
+        margin: 0 8px 5px 0;
+        color: $mc;
+        font-size: .9rem;
+        transition: color .3s $easeInOutSine;
+        &:last-child{
+          margin-right: 0;
+        }
+        &:hover{
+          color: darken($mc, 20%);
+        }
+      }
+    }
+
+    &:hover{
+      figure{
+        img{
+          transform: scale(1.1);
+        }
+      }
+      .item_title{
+        text-decoration: underline;
+      }
+    }
+  }
+}

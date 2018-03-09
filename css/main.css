@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Krona+One";
-@import url(icomoon/style.css);
+@import "https://i.icomoon.io/public/temp/304a67144f/project_s/style.css";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -3084,6 +3084,114 @@ footer {
   #about .page_content p {
     margin-bottom: 10px; }
 
+/*作品aside*/
+#work .page_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+
+.works_aside {
+  width: 350px;
+  min-height: 60vh;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1;
+  flex: 1 1;
+  padding-right: 15px; }
+
+#work .works_list {
+  width: calc(100% - 350px);
+  -webkit-box-flex: 3;
+  -ms-flex: 3 1;
+  flex: 3 1;
+  padding-left: 15px; }
+
+@media (max-width: 768px) {
+  .works_aside {
+    padding: 0 15px;
+    min-height: 0; }
+  #work .works_list {
+    padding: 0; }
+  .works_aside, #work .works_list {
+    width: 100%;
+    -webkit-box-flex: inherit;
+    -ms-flex: inherit;
+    flex: inherit; } }
+
+.aside_title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px; }
+
+.aside_list {
+  margin-bottom: 3rem; }
+  .aside_list li {
+    border-left: 0 solid transparent;
+    -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -o-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+    .aside_list li a {
+      display: block;
+      text-decoration: none;
+      color: #000000;
+      padding: 5px 10px; }
+    .aside_list li:hover, .aside_list li.active {
+      background-color: #f1f1f1;
+      border-left: 3px solid #F28241; }
+
+.works_aside .search {
+  position: relative;
+  margin-bottom: 15px; }
+  .works_aside .search .form-field {
+    width: 100%;
+    height: 35px;
+    padding: 5px 40px 5px 10px;
+    border: 1px solid #F28241;
+    outline: 0; }
+    .works_aside .search .form-field:focus {
+      -webkit-box-shadow: 0 0 0 transparent;
+      box-shadow: 0 0 0 transparent; }
+  .works_aside .search .form-btn {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background-color: #F28241;
+    color: #ffffff;
+    text-align: center;
+    border: 1px solid #F28241;
+    outline: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    -webkit-transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -o-transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+    .works_aside .search .form-btn:hover {
+      background-color: #c04f0d; }
+
+.works_aside .keywords {
+  font-size: 0; }
+  .works_aside .keywords li {
+    display: inline-block;
+    vertical-align: top;
+    padding: 2px 8px;
+    margin: 0 5px 5px 0;
+    background-color: #F28241;
+    color: #ffffff;
+    font-size: .9rem;
+    border-radius: 3px;
+    -webkit-transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    -o-transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+    .works_aside .keywords li a {
+      color: #ffffff;
+      text-decoration: none; }
+    .works_aside .keywords li:hover {
+      background-color: #c04f0d; }
+
 /* 作品列表 */
 .works_list {
   display: -webkit-box;
@@ -3096,32 +3204,126 @@ footer {
   justify-content: space-between;
   width: 100%;
   margin-bottom: 6vmin; }
-  .works_list li {
+  .works_list .item {
+    width: 25%;
+    padding: 15px;
+    -ms-flex-item-align: stretch;
+    align-self: stretch; }
+    @media (max-width: 1440px) {
+      .works_list .item {
+        width: 33.333%; } }
+    @media (max-width: 1080px) {
+      .works_list .item {
+        width: 50%; } }
+    @media (max-width: 560px) {
+      .works_list .item {
+        width: 100%; } }
+    .works_list .item a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: #000;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+      position: relative; }
+    .works_list .item figure {
+      width: 100%;
+      height: 10vh;
+      overflow: hidden; }
+      .works_list .item figure img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -webkit-transition: -webkit-transform .8s ease-in-out;
+        transition: -webkit-transform .8s ease-in-out;
+        -o-transition: transform .8s ease-in-out;
+        transition: transform .8s ease-in-out;
+        transition: transform .8s ease-in-out, -webkit-transform .8s ease-in-out; }
+    .works_list .item .item_title {
+      height: 50px;
+      font-size: 1rem;
+      line-height: 1.3;
+      padding: 8px 15px 5px;
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; }
+    .works_list .item .keywords {
+      padding: 5px 15px;
+      font-size: 0;
+      -ms-flex-item-align: end;
+      align-self: end; }
+      .works_list .item .keywords li {
+        display: inline-block;
+        vertical-align: top;
+        padding: 2px 0;
+        margin: 0 8px 5px 0;
+        color: #F28241;
+        font-size: .9rem;
+        -webkit-transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        -o-transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+        .works_list .item .keywords li:last-child {
+          margin-right: 0; }
+        .works_list .item .keywords li:hover {
+          color: #c04f0d; }
+    .works_list .item:hover figure img {
+      -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+      transform: scale(1.1); }
+    .works_list .item:hover .item_title {
+      text-decoration: underline; }
+
+.project_list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 6vmin; }
+  .project_list li {
     width: 25%;
     padding: 15px; }
     @media (max-width: 1280px) {
-      .works_list li {
+      .project_list li {
         width: 33.333%; } }
     @media (max-width: 991px) {
-      .works_list li {
+      .project_list li {
         width: 50%; } }
-    @media (max-width: 600px) {
-      .works_list li {
+    @media (max-width: 560px) {
+      .project_list li {
         width: 100%; } }
-    .works_list li figure {
+    .project_list li figure {
       width: 100%;
       height: 22vh;
       overflow: hidden;
       position: relative; }
-      @media (max-width: 600px) {
-        .works_list li figure {
-          height: 30vh; } }
-      .works_list li figure img {
+      @media (max-width: 560px) {
+        .project_list li figure {
+          height: 25vh; } }
+      .project_list li figure img {
         width: 100%;
         height: 100%;
         -o-object-fit: cover;
         object-fit: cover; }
-      .works_list li figure .cover {
+      .project_list li figure .cover {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -3148,11 +3350,11 @@ footer {
         -webkit-transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         -o-transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
-    .works_list li a {
+    .project_list li a {
       display: block;
       text-decoration: none;
       color: #000; }
-    .works_list li:hover .cover {
+    .project_list li:hover .cover {
       -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
       box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
       -webkit-transform: translateX(-2px) translateY(-2px);
