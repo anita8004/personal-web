@@ -46,15 +46,18 @@
         overflow: hidden;
         box-shadow: 2px 2px 15px rgba(0,0,0,0);
         transition: all .2s $easeInOutSine;
+        font-size: 1.2rem;
       }
     }
     a {
       display: block;
       text-decoration: none;
       color: #000;
+      border: 1px solid rgba(238, 238, 238, 1);
     }
     &:hover{
       .cover{
+        background-color: rgba(255, 255, 255, .9);
         box-shadow: 2px 2px 15px rgba(0,0,0,.3);
         transform: translateX(-2px) translateY(-2px);
       }

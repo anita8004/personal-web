@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "https://fonts.googleapis.com/css?family=Krona+One";
-@import "https://i.icomoon.io/public/temp/304a67144f/project_s/style.css";
+@import "https://i.icomoon.io/public/temp/421813c6fa/project_s/style.css";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -3349,12 +3349,15 @@ footer {
         box-shadow: 2px 2px 15px transparent;
         -webkit-transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
         -o-transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-        transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+        transition: all 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+        font-size: 1.2rem; }
     .project_list li a {
       display: block;
       text-decoration: none;
-      color: #000; }
+      color: #000;
+      border: 1px solid #eeeeee; }
     .project_list li:hover .cover {
+      background-color: rgba(255, 255, 255, 0.9);
       -webkit-box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
       box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
       -webkit-transform: translateX(-2px) translateY(-2px);
