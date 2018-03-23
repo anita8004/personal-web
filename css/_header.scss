@@ -19,26 +19,29 @@
       display: inline-block;
       vertical-align: middle;
       padding: 5px 10px;
-    }
-    a {
-      display: inline-block;
-      color: #fff;
-      text-decoration: none;
-      position: relative;
-      &:after {
-        content: "";
-        display: block;
-        width: 0;
-        height: 1px;
-        background-color: #fff;
-        transition: width .3s $easeInOutSine;
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: -3px;
-        margin: auto;
+      a {
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        &:after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 1px;
+          background-color: #fff;
+          transition: width .3s $easeInOutSine;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: -3px;
+          margin: auto;
+        }
+        &:hover:after{
+          width: 100%;
+        }
       }
-      &:hover:after {
+      &.active a:after{
         width: 100%;
       }
     }

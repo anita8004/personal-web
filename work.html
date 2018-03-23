@@ -27,7 +27,7 @@
           <li><a href="./index.html">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="project.html">PROJECT</a></li>
-          <li><a href="work.html">WORK</a></li>
+          <li class="active"><a href="work.html">WORK</a></li>
         </ul>
       </nav>
     </div>
@@ -43,10 +43,8 @@
             <h3 class="aside_title">分類</h3>
             <ul class="aside_list filters-button-group">
               <li class="active filtr-button filter filtr-active" data-filter="*"><a href="#!">All</a></li>
-              <li class="filter filtr-button" data-filter=".html"><a href="#!">html</a></li>
               <li class="filter filtr-button" data-filter=".css"><a href="#!">css</a></li>
               <li class="filter filtr-button" data-filter=".javascript"><a href="#!">javascript</a></li>
-              <li class="filter filtr-button" data-filter=".jquery"><a href="#!">jQuery</a></li>
               <li class="filter filtr-button" data-filter=".notebook"><a href="#!">notebook</a></li>
             </ul>   
             <h3 class="aside_title">關鍵字搜尋</h3>
@@ -56,11 +54,14 @@
             </form>         
             <h3 class="aside_title">關鍵字雲</h3>
             <ul class="keywords">
-              <li><a href="#!">html</a></li>
-              <li><a href="#!">css</a></li>
-              <li><a href="#!">javascript</a></li>
-              <li><a href="#!">jQuery</a></li>
-              <li><a href="#!">notebook</a></li>
+              <li><a href="#!">pure javascript</a></li>
+              <li><a href="#!">game</a></li>
+              <li><a href="#!">carousel</a></li>
+              <li><a href="#!">resize</a></li>
+              <li><a href="#!">slick</a></li>
+              <li><a href="#!">取餘數</a></li>
+              <li><a href="#!">百葉窗</a></li>
+              <li><a href="#!">卷軸客製化</a></li>
             </ul>            
           </aside>
           <ul class="works_list filtr-container sameSize" id="worksList">
@@ -99,86 +100,56 @@
       "works": [
         {
           "id": 1,
-          "title": "Lorem ipsum dolor sit amet",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "html",
-          "key": ["html"]
+          "title": "Treasure Hunt",
+          "url": "https://jsbin.com/lepiled/3/edit?output",
+          "category": "javascript",
+          "key": ["pure javascript", "game"]
         },
         {
           "id": 2,
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "html css",
-          "key": ["html","css"]
+          "title": "輪播",
+          "url": "https://jsfiddle.net/anita8004/925z85j7/",
+          "category": "javascript",
+          "key": ["carousel"]
         },
         {
           "id": 3,
-          "title": "Lorem ipsum dolor sit amet",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "css notebook",
-          "key": ["notebook","css"]
+          "title": "Resize 次數控制",
+          "url": "https://jsfiddle.net/anita8004/Loymu2jw/",
+          "category": "javascript",
+          "key": ["resize"]
         },
         {
           "id": 4,
-          "title": "Lorem ipsum dolor sit amet",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "html css jquery",
-          "key": ["html","css","jquery"]
+          "title": "slick範例 - filter",
+          "url": "https://jsfiddle.net/anita8004/17s7nopx/",
+          "category": "html css javascript",
+          "key": ["slick"]
         },
         {
           "id": 5,
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
+          "title": "取餘數",
           "pic": "./images/snow-man.jpg",
-          "url": "#!",
+          "url": "https://jsfiddle.net/anita8004/a9g8gLsL/",
           "category": "javascript",
-          "key": ["javascript"]
+          "key": ["取餘數"]
         },
         {
           "id": 6,
-          "title": "Lorem ipsum dolor sit amet",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "css notebook",
-          "key": ["notebook","css"]
+          "title": "百葉窗展開收闔",
+          "url": "https://jsfiddle.net/anita8004/sm7s1szq/",
+          "category": "javascript",
+          "key": ["百葉窗"]
         },
         {
           "id": 7,
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "html css jquery",
-          "key": ["html","css","jquery"]
-        },
-        {
-          "id": 8,
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "javascript",
-          "key": ["javascript"]
-        },
-        {
-          "id": 9,
-          "title": "Lorem ipsum dolor sit amet",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "html",
-          "key": ["html"]
-        },
-        {
-          "id": 10,
-          "title": "Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
-          "pic": "./images/snow-man.jpg",
-          "url": "#!",
-          "category": "html css",
-          "key": ["html","css"]
+          "title": "卷軸客製化",
+          "url": "https://jsfiddle.net/anita8004/tj0zv0uc/",
+          "category": "css",
+          "key": ["卷軸客製化"]
         }
       ]
-    }
+    };
 
     var List = document.getElementById('worksList');   
     
@@ -186,20 +157,21 @@
     
 
     for (var i = 0; i < data.works.length; i++) {
-      
+
+      /*<figure>
+    <img src="${data.works[i].pic}" alt="${data.works[i].title}">
+            </figure>*/
+
       List.innerHTML += `<li class="item ${data.works[i].category}">
               <a href="${data.works[i].url}">
-                <figure>
-                  <img src="${data.works[i].pic}" alt="${data.works[i].title}">
-                </figure>
-                <h3 class="item_title">${data.works[i].id}. ${data.works[i].title}</h3>
+                <h3 class="item_title">${data.works[i].title}</h3>
                 <ul class="keywords"></ul>
               </a>
             </li>`;  
 
       keys = document.querySelectorAll('#worksList .keywords');      
       for (j = 0; j < data.works[i].key.length; j++) {        
-        keys[i].innerHTML += `<li>${data.works[i].key[j]}</li>`
+        keys[i].innerHTML += `<li>#${data.works[i].key[j]}</li>`
       }  
 
     }
