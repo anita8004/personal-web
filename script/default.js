@@ -1,4 +1,12 @@
 $(function() {
+
+    if ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        $("html").addClass("mobile").removeClass("desktop");
+    } else {
+        $("html").addClass("desktop").removeClass("mobile");
+    }
+
+
   /*
     * 手機選單
     */
@@ -38,16 +46,53 @@ $(function() {
 
   /*
     * wow網頁特效
-    * */
+    *
+  */
 
-  new WOW().init();
+    var wow = new WOW(
+        {
+            boxClass:     'wow',
+            animateClass: 'animated',
+            offset:       0,
+            mobile:       false,
+            live:         true
+        }
+    );
+    wow.init();
 
-  /*
-    * 視差滾動
-    * */
+    if ($(".revealOnScroll").length > 0 && $(".desktop").length > 0) {
+        $(".revealOnScroll").each(function () {
+            var $this = $(this);
+            var offsetTop = $this.offset().top;
+            var thisHeight = $this.height();
+            var dataAni = $this.data("animation");
+            var winHeight = $(window).height();
+            var topLine = offsetTop - winHeight + thisHeight;
+            var bottomLine = offsetTop + thisHeight;
+            $(window).on("scroll", function () {
+                var scrollTop = $(this).scrollTop();
+                console.log(topLine, bottomLine, scrollTop);
+                if (scrollTop >= topLine) {
+                    $this.addClass(dataAni);
+                }
+                if (scrollTop > bottomLine || scrollTop < topLine) {
+                    $this.removeClass(dataAni);
+                }
+            });
+        });
+    }
+
+
+
+
+    /*
+      * 視差滾動
+      * */
 
   $(".parallax-window").each(function() {
-    $(this).parallax();
+    if ($(".parallax-window").length > 0) {
+        $(this).parallax();
+    }
   });
 
   /**
@@ -55,13 +100,17 @@ $(function() {
    * https://isotope.metafizzy.co/filtering.html
    */
 
-  var $grid = $("#worksList").isotope({
-    itemSelector: ".item",
-    layoutMode: "masonry",
-    cellsByRow: {
-        columnWidth: 10   
-    },
-  });
+  if($("#worksList").length > 0) {
+      var $grid = $("#worksList").isotope({
+          itemSelector: ".item",
+          layoutMode: "masonry",
+          cellsByRow: {
+              columnWidth: 10
+          },
+      });
+  }
+
+
 
   $('.filters-button-group').on( 'click', 'li', function() {
     var filterValue = $(this).attr('data-filter');

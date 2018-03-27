@@ -926,8 +926,8 @@ table {
 @-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0); }
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0); }
   to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
@@ -935,8 +935,8 @@ table {
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    -webkit-transform: translate3d(0, -100%, 0);
-    transform: translate3d(0, -100%, 0); }
+    -webkit-transform: translate3d(0, -50%, 0);
+    transform: translate3d(0, -50%, 0); }
   to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
@@ -2565,6 +2565,11 @@ footer {
   padding: 10px;
   text-align: center; }
 
+@keyframes scrollAni {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(20px); } }
 .sect_banner {
   width: 100%;
   height: 100vh;
@@ -2630,7 +2635,8 @@ footer {
       color: #000;
       text-decoration: none;
       font-size: 4rem;
-      line-height: 0; }
+      line-height: 0;
+      animation: scrollAni 1s cubic-bezier(0.55, 0.055, 0.675, 0.19) alternate infinite; }
     .sect_banner .card .list-head {
       font-size: 1.5rem;
       color: #000;
@@ -2856,6 +2862,12 @@ footer {
       color: #F28241;
       background-color: rgba(255, 255, 255, 0.8);
       transform: rotate(359deg); }
+
+.revealOnScroll {
+  opacity: 0; }
+
+.mobile .revealOnScroll {
+  opacity: 1; }
 
 .page_banner {
   width: 100%;
