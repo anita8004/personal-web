@@ -43,6 +43,7 @@
   li{
     border-left: 0 solid transparent;
     transition: all .3s $easeInOutSine;
+    border-bottom: 1px solid transparent;
     a{
       display: block;
       text-decoration: none;
@@ -50,8 +51,9 @@
       padding: 5px 10px;
     }
     &:hover,&.active{
-      background-color: #f1f1f1;
+      background-color: rgba($mc-light,.3);
       border-left: 3px solid $mc;
+      border-bottom-color: $mc-compare;
     }
   }
 }
@@ -85,7 +87,7 @@
     cursor: pointer;
     transition: background-color .3s $easeInOutSine;
     &:hover{
-      background-color: #c04f0d;
+      background-color: $mc-deep;
     }
   }
 }
@@ -111,7 +113,7 @@
       text-decoration: none;
     }
     &:hover{
-      background-color: #c04f0d;
+      background-color: $mc-deep;
     }
   }
 }
@@ -149,9 +151,9 @@
       height: 100%;
       text-decoration: none;
       color: #000;
-      outline: 1px solid #ccc;
+      outline: 1px solid $mc-compare;
       border: 15px solid #fff;
-      background-color: #f1f1f1;
+      background-color: rgba($mc-light,.3);
       position: relative;
       padding: 15px;
       transition: background-color .3s $easeInOutSine;
@@ -187,7 +189,7 @@
 
     &:hover{
       a{
-        background-color: #ECECEC;
+        background-color: rgba($mc-light,.5);
       }
       .item_title{
         letter-spacing: .05rem;

@@ -71,7 +71,7 @@ $(function() {
             var bottomLine = offsetTop + thisHeight;
             $(window).on("scroll", function () {
                 var scrollTop = $(this).scrollTop();
-                console.log(topLine, bottomLine, scrollTop);
+                //console.log(topLine, bottomLine, scrollTop);
                 if (scrollTop >= topLine) {
                     $this.addClass(dataAni);
                 }
@@ -81,8 +81,6 @@ $(function() {
             });
         });
     }
-
-
 
 
     /*
@@ -163,3 +161,43 @@ $(function() {
 });
 
 
+/*
+* works_aside list active
+* */
+
+$(".works_aside .aside_list li").on("click", function () {
+    $(this).addClass("active").siblings().removeClass("active");
+});
+
+
+/*
+* scrollDown
+* */
+
+$(".scrollDown").on("click", function () {
+    $("html,body").animate({
+        scrollTop: $(".sect_banner").height()
+    }, 800, "easeInOutSine");
+});
+
+
+/*
+* scrollTop
+* */
+
+
+$(".scrollTop").on("click", function () {
+    $("html,body").animate({
+        scrollTop: 0
+    }, 800, "easeInOutSine");
+});
+
+$(window).on("scroll resize", function () {
+    var scrollTop = $(this).scrollTop();
+    var height = $(this).height();
+    if (scrollTop < height){
+        $(".scrollTop").removeClass("fadeIn");
+    } else {
+        $(".scrollTop").addClass("fadeIn");
+    }
+}).trigger("scroll resize");

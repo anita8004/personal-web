@@ -78,3 +78,33 @@ img {
   margin: 0;
   padding: 0;
 }
+
+
+%sty1-hoverbefore{
+  position: relative;
+  &:before{
+    content: '';
+    width: 0;
+    height: 5px;
+    background-color: $mc-deep;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: all .3s $easeInOutSine;
+  }
+}
+
+%sty1-hoverafter{
+  &:before{
+    width: 100%;
+  }
+}
+
+.sty1-hover{
+  @extend %sty1-hoverbefore;
+  &:hover{
+    @extend %sty1-hoverafter;
+  }
+}

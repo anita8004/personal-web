@@ -2458,6 +2458,23 @@ img {
   margin: 0;
   padding: 0; }
 
+.sty1-hover, .list_sty1 .view {
+  position: relative; }
+  .sty1-hover:before, .list_sty1 .view:before {
+    content: '';
+    width: 0;
+    height: 5px;
+    background-color: #0A4958;
+    border-radius: 20px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+
+.sty1-hover:hover:before, .list_sty1 li:hover .view:before {
+  width: 100%; }
+
 #header {
   position: fixed;
   top: 0;
@@ -2465,7 +2482,7 @@ img {
   right: 0;
   margin: auto;
   z-index: 6000;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(10, 73, 88, 0.8);
   padding: 10px 0; }
   #header .logo {
     float: left;
@@ -2558,13 +2575,39 @@ img {
       position: relative;
       top: 0; } }
 footer {
-  background-color: #2F2E2E;
-  color: rgba(255, 255, 255, 0.7); }
+  background-color: #0A4958;
+  color: white; }
+  footer .container {
+    position: relative; }
+  footer .scrollTop {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #eed0a8;
+    color: #0A4958;
+    font-size: 2rem;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 20;
+    text-decoration: none;
+    animation: scrollTopRotate 1.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) alternate infinite both;
+    opacity: 0;
+    transition: opacity 0.5s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+    footer .scrollTop.fadeIn {
+      opacity: 1; }
+  footer .copyright {
+    padding: 10px;
+    text-align: center; }
 
-.copyright {
-  padding: 10px;
-  text-align: center; }
-
+@keyframes scrollTopRotate {
+  0% {
+    transform: rotateY(0); }
+  100% {
+    transform: rotateY(360deg); } }
 @keyframes scrollAni {
   0% {
     transform: translateY(0); }
@@ -2687,7 +2730,7 @@ footer {
       display: block;
       width: 40px;
       height: 3px;
-      background-color: #F28241;
+      background-color: #01B6AD;
       position: absolute;
       left: 0;
       right: 0;
@@ -2726,7 +2769,7 @@ footer {
   .list_sty1 .view {
     display: inline-block;
     padding: 10px;
-    color: #F28241;
+    color: #01B6AD;
     text-decoration: none;
     font-size: .9rem; }
 
@@ -2751,12 +2794,15 @@ footer {
     flex-wrap: wrap; }
     .list_sty1 li {
       width: 100%; } }
+#about .list_sty1 li {
+  padding: 5vmin 3vmin; }
+
 .sect_project {
   text-align: center; }
   .sect_project .more {
     display: inline-block;
     padding: 10px;
-    color: #F28241;
+    color: #01B6AD;
     text-decoration: none;
     font-family: "Krona One", "Noto Sans TC", "Arial", "微軟正黑體";
     font-size: .9rem;
@@ -2850,7 +2896,7 @@ footer {
     color: #fff;
     text-decoration: none;
     outline: 0;
-    background-color: #F28241;
+    background-color: #01B6AD;
     margin: 5px;
     transform: rotate(0deg);
     transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
@@ -2859,7 +2905,7 @@ footer {
       font-size: 0;
       opacity: 0; }
     .sect_contact .icon:hover {
-      color: #F28241;
+      color: #01B6AD;
       background-color: rgba(255, 255, 255, 0.8);
       transform: rotate(359deg); }
 
@@ -2887,7 +2933,7 @@ footer {
     display: block;
     width: 40px;
     height: 3px;
-    background-color: #F28241;
+    background-color: #01B6AD;
     position: absolute;
     left: 0;
     right: 0;
@@ -2937,15 +2983,17 @@ footer {
   margin-bottom: 3rem; }
   .aside_list li {
     border-left: 0 solid transparent;
-    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
+    transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    border-bottom: 1px solid transparent; }
     .aside_list li a {
       display: block;
       text-decoration: none;
       color: #000000;
       padding: 5px 10px; }
     .aside_list li:hover, .aside_list li.active {
-      background-color: #f1f1f1;
-      border-left: 3px solid #F28241; }
+      background-color: rgba(246, 231, 210, 0.3);
+      border-left: 3px solid #01B6AD;
+      border-bottom-color: #eed0a8; }
 
 .works_aside .search {
   position: relative;
@@ -2954,7 +3002,7 @@ footer {
     width: 100%;
     height: 35px;
     padding: 5px 40px 5px 10px;
-    border: 1px solid #F28241;
+    border: 1px solid #01B6AD;
     outline: 0; }
     .works_aside .search .form-field:focus {
       box-shadow: 0 0 0 transparent; }
@@ -2962,10 +3010,10 @@ footer {
     width: 35px;
     height: 35px;
     line-height: 35px;
-    background-color: #F28241;
+    background-color: #01B6AD;
     color: #ffffff;
     text-align: center;
-    border: 1px solid #F28241;
+    border: 1px solid #01B6AD;
     outline: 0;
     font-size: 1.2rem;
     position: absolute;
@@ -2974,7 +3022,7 @@ footer {
     cursor: pointer;
     transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
     .works_aside .search .form-btn:hover {
-      background-color: #c04f0d; }
+      background-color: #0A4958; }
 
 .works_aside .keywords {
   font-size: 0;
@@ -2983,7 +3031,7 @@ footer {
     display: inline-block;
     vertical-align: top;
     margin: 0 5px 5px 0;
-    background-color: #F28241;
+    background-color: #01B6AD;
     color: #ffffff;
     font-size: .9rem;
     border-radius: 3px;
@@ -2996,7 +3044,7 @@ footer {
       color: #ffffff;
       text-decoration: none; }
     .works_aside .keywords li:hover {
-      background-color: #c04f0d; }
+      background-color: #0A4958; }
 
 /* 作品列表 */
 .works_list {
@@ -3030,9 +3078,9 @@ footer {
       height: 100%;
       text-decoration: none;
       color: #000;
-      outline: 1px solid #ccc;
+      outline: 1px solid #eed0a8;
       border: 15px solid #fff;
-      background-color: #f1f1f1;
+      background-color: rgba(246, 231, 210, 0.3);
       position: relative;
       padding: 15px;
       transition: background-color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
@@ -3050,15 +3098,15 @@ footer {
         vertical-align: top;
         padding: 2px 0;
         margin: 0 8px 0 0;
-        color: #F28241;
+        color: #01B6AD;
         font-size: .9rem;
         transition: color 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95); }
         .works_list .item .keywords li:last-child {
           margin-right: 0; }
         .works_list .item .keywords li:hover {
-          color: #c04f0d; }
+          color: #00514d; }
     .works_list .item:hover a {
-      background-color: #ECECEC; }
+      background-color: rgba(246, 231, 210, 0.5); }
     .works_list .item:hover .item_title {
       letter-spacing: .05rem; }
 
@@ -3114,7 +3162,7 @@ footer {
       display: block;
       text-decoration: none;
       color: #000;
-      border: 1px solid #eeeeee; }
+      border: 1px solid #eed0a8; }
     .project_list li:hover .cover {
       background-color: rgba(255, 255, 255, 0.9);
       box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);

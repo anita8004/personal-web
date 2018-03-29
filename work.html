@@ -37,9 +37,9 @@
     </div>
     <section class="page_wrap" id="work">
       <div class="container">
-        <h2 class="page_title">WORK</h2>
+        <h2 class="page_title wow fadeInDown">WORK</h2>
         <div class="page_content">
-          <aside class="works_aside">
+          <aside class="works_aside wow fadeInLeft">
             <h3 class="aside_title">分類</h3>
             <ul class="aside_list filters-button-group">
               <li class="active filtr-button filter filtr-active" data-filter="*"><a href="#!">All</a></li>
@@ -87,6 +87,7 @@
   </main>
   <footer>
     <div class="container">
+      <a href="#!" class="scrollTop"><span class="icon-keyboard_arrow_up"></span></a>
       <p class="copyright">
         copyright by Anita
       </p>
@@ -193,7 +194,7 @@
     <img src="${data.works[i].pic}" alt="${data.works[i].title}">
             </figure>*/
 
-      List.innerHTML += `<li class="item ${data.works[i].category}">
+      List.innerHTML += `<li class="item ${data.works[i].category} wow flipInY">
               <a href="${data.works[i].url}" target="_blank">
                 <h3 class="item_title">${data.works[i].title}</h3>
                 <ul class="keywords"></ul>

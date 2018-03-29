@@ -204,6 +204,12 @@
     color: $mc;
     text-decoration: none;
     font-size: .9rem;
+    @extend %sty1-hoverbefore;
+  }
+  li:hover{
+    .view{
+      @extend %sty1-hoverafter;
+    }
   }
 }
 
@@ -242,6 +248,12 @@
     li {
       width: 100%;
     }
+  }
+}
+
+#about .list_sty1{
+  li{
+    padding: 5vmin 3vmin;
   }
 }
 
