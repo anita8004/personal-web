@@ -110,6 +110,35 @@ $(function() {
       });
   }
 
+    $("#workSearch").on("click", "button", function (e) {
+        var inputValue = $("#workSearch input").val();
+        $grid.isotope({
+            filter: function() {
+                var keywords = $(this).find('.keywords li');
+                var title = $(this).find('.item_title').text();
+
+                if (inputValue === title){
+                    return 1;
+                }
+                if (inputValue === "") {
+                    return 1;
+                }
+                for (var $i=0;$i<keywords.length;$i++) {
+                    var keys = $(keywords[$i]).html().substr(1);
+                    if (inputValue === keys){
+                        return 1;
+                    }
+                }
+            }
+        });
+        e.preventDefault();
+    });
+
+    $("#workSearch").on("keydown","input", function () {
+       if ($(this).val() === "") {
+           $grid.isotope({ filter: "*" });
+       }
+    });
 
 
   $('.filters-button-group').on( 'click', 'li', function() {
@@ -117,4 +146,20 @@ $(function() {
     $grid.isotope({ filter: filterValue });
   });
 
+  $(".works_aside .keywords").on("click", "li", function () {
+      var keyText = $(this).text();
+      $grid.isotope({
+          filter: function() {
+              var keywords = $(this).find('.keywords li');
+              for (var $i=0;$i<keywords.length;$i++) {
+                  var keys = $(keywords[$i]).html().substr(1);
+                  if (keyText === keys){
+                      return 1;
+                  }
+              }
+          }
+      });
+  });
 });
+
+
