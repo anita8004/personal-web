@@ -1,0 +1,81 @@
+{"works": [
+    {
+      "id": 1,
+      "title": "Treasure Hunt",
+      "url": "https://jsbin.com/lepiled/3/edit?output",
+      "category": "javascript",
+      "key": ["pure javascript", "game"]
+    },
+    {
+      "id": 2,
+      "title": "輪播",
+      "url": "https://jsfiddle.net/anita8004/925z85j7/",
+      "category": "javascript",
+      "key": ["carousel"]
+    },
+    {
+      "id": 3,
+      "title": "Resize 次數控制",
+      "url": "https://jsfiddle.net/anita8004/Loymu2jw/",
+      "category": "javascript",
+      "key": ["resize"]
+    },
+    {
+      "id": 4,
+      "title": "slick範例 - filter",
+      "url": "https://jsfiddle.net/anita8004/17s7nopx/",
+      "category": "html css javascript",
+      "key": ["slick"]
+    },
+    {
+      "id": 5,
+      "title": "取餘數",
+      "pic": "./images/snow-man.jpg",
+      "url": "https://jsfiddle.net/anita8004/a9g8gLsL/",
+      "category": "javascript",
+      "key": ["取餘數"]
+    },
+    {
+      "id": 6,
+      "title": "百葉窗展開收闔",
+      "url": "https://jsfiddle.net/anita8004/sm7s1szq/",
+      "category": "javascript",
+      "key": ["百葉窗"]
+    },
+    {
+      "id": 7,
+      "title": "卷軸客製化",
+      "url": "https://jsfiddle.net/anita8004/tj0zv0uc/",
+      "category": "css",
+      "key": ["卷軸客製化"]
+    },
+    {
+      "id": 8,
+      "title": "when().then()",
+      "url": "https://hackmd.io/s/r1fJF2uE-",
+      "category": "notebook",
+      "key": ["學習筆記","javascript"]
+    },
+    {
+      "id": 9,
+      "title": "Json & Map",
+      "url": "https://hackmd.io/s/BkV8Cb5Eb",
+      "category": "notebook",
+      "key": ["學習筆記","javascript"]
+    },
+    {
+      "id": 10,
+      "title": "Pug 寫法整理",
+      "url": "https://hackmd.io/s/Hk2Hui1NW",
+      "category": "notebook",
+      "key": ["學習筆記","pug"]
+    },
+    {
+      "id": 11,
+      "title": "Array",
+      "url": "https://hackmd.io/s/BkCV6EFcG",
+      "category": "notebook",
+      "key": ["學習筆記","javascript"]
+    }
+  ]
+}

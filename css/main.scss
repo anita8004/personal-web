@@ -4,19 +4,11 @@ $mc-light:#F6E7D2;
 $mc-deep:#0A4958;
 $mc-bkd:#0A4958;
 
-//$mc:#74593d;
-//$mc-compare:#b5c1b4;
-//$mc-light:#dcd9c6;
-//$mc-deep:#1b1924;
-//$mc-bkd:#3f3232;
-
 
 $font1: "Krona One",
 "Noto Sans TC",
 "Arial",
 "微軟正黑體";
-
-
 
 
 //@import "//fonts.googleapis.com/earlyaccess/notosanstc.css";
@@ -30,6 +22,7 @@ $font1: "Krona One",
 @import "_footer.scss";
 @import "_index.scss";
 @import "_page.scss";
+@import "_about.scss";
 @import "_work.scss";
 @import "_project.scss";
 

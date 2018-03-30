@@ -1,0 +1,40 @@
+.learning-experience{
+  section{
+    padding: 2rem 0;
+  }
+  .title{
+    font-size: 1.3rem;
+    padding: 0;
+    position: relative;
+    margin-bottom: 1rem;
+    &:after{
+      content: '';
+      width: 100px;
+      height: 5px;
+      border-radius: 10px;
+      background-color: rgba($mc, .5);
+      position: absolute;
+      left: 0;
+      bottom: 5px;
+    }
+  }
+  .learning-list{
+    &.has-img{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-content: stretch;
+      li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+        img{
+          width: 80px;
+          height: 80px;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}

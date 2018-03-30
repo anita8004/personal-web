@@ -156,7 +156,7 @@
       background-color: rgba($mc-light,.3);
       position: relative;
       padding: 15px;
-      transition: background-color .3s $easeInOutSine;
+      transition: all .3s $easeInOutSine;
     }
 
     .item_title{
@@ -190,6 +190,7 @@
     &:hover{
       a{
         background-color: rgba($mc-light,.5);
+        outline-offset: 5px;
       }
       .item_title{
         letter-spacing: .05rem;
