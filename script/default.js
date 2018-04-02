@@ -44,44 +44,6 @@ $(function() {
     })
     .trigger("resize");
 
-  /*
-    * wow網頁特效
-    *
-  */
-
-    var wow = new WOW(
-        {
-            boxClass:     'wow',
-            animateClass: 'animated',
-            offset:       0,
-            mobile:       false,
-            live:         true
-        }
-    );
-    wow.init();
-
-    if ($(".revealOnScroll").length > 0 && $(".desktop").length > 0) {
-        $(".revealOnScroll").each(function () {
-            var $this = $(this);
-            var offsetTop = $this.offset().top;
-            var thisHeight = $this.height();
-            var dataAni = $this.data("animation");
-            var winHeight = $(window).height();
-            var topLine = offsetTop - winHeight + thisHeight;
-            var bottomLine = offsetTop + thisHeight;
-            $(window).on("scroll", function () {
-                var scrollTop = $(this).scrollTop();
-                //console.log(topLine, bottomLine, scrollTop);
-                if (scrollTop >= topLine) {
-                    $this.addClass(dataAni);
-                }
-                if (scrollTop > bottomLine || scrollTop < topLine) {
-                    $this.removeClass(dataAni);
-                }
-            });
-        });
-    }
-
 
     /*
       * 視差滾動
@@ -201,3 +163,42 @@ $(window).on("scroll resize", function () {
         $(".scrollTop").addClass("fadeIn");
     }
 }).trigger("scroll resize");
+
+
+/*
+    * wow網頁特效
+    *
+  */
+
+var wow = new WOW(
+    {
+        boxClass:     'wow',
+        animateClass: 'animated',
+        offset:       0,
+        mobile:       false,
+        live:         true
+    }
+);
+wow.init();
+
+if ($(".revealOnScroll").length > 0 && $(".desktop").length > 0) {
+    $(".revealOnScroll").each(function () {
+        var $this = $(this);
+        var offsetTop = $this.offset().top;
+        var thisHeight = $this.height();
+        var dataAni = $this.data("animation");
+        var winHeight = $(window).height();
+        var topLine = offsetTop - winHeight + thisHeight;
+        var bottomLine = offsetTop + thisHeight;
+        $(window).on("scroll", function () {
+            var scrollTop = $(this).scrollTop();
+            //console.log(topLine, bottomLine, scrollTop);
+            if (scrollTop >= topLine) {
+                $this.addClass(dataAni);
+            }
+            if (scrollTop > bottomLine || scrollTop < topLine) {
+                $this.removeClass(dataAni);
+            }
+        });
+    });
+}
