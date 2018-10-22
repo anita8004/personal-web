@@ -108,3 +108,8 @@ img {
     @extend %sty1-hoverafter;
   }
 }
+
+/* 去廣告 */
+.parallax-mirror + a {
+  display: none;
+}

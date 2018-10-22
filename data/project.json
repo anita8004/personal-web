@@ -76,6 +76,12 @@
       "pic": "./images/project/project13.jpg",
       "title": "暐康",
       "url": "http://www.wellcare-global.com"
+    },
+    {
+      "id": 14,
+      "pic": "./images/project/project14.png",
+      "title": "悠遊卡",
+      "url": "https://www.easycard.com.tw"
     }
   ]
 }

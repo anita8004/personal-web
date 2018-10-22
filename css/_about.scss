@@ -37,4 +37,52 @@
       }
     }
   }
+  .learning-methods {
+    .item {
+      h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+      }
+      p {
+        color: gray;
+      }
+    }
+  }
+}
+
+#about {
+  .introduction {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    > div {
+      width: 50%;
+      padding: 1rem;
+      @media (max-width: 480px) {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .photo {
+      text-align: center;
+      img {
+        width: 100%;
+        max-width: 200px;
+        margin: auto;
+      }
+    }
+  }
+  .list_sty1{
+    flex-wrap: wrap;
+    li{
+      width: 25%;
+      padding: 5vmin 3vmin;
+      @media (max-width: 768px) {
+        width: 50%;
+      }
+      @media (max-width: 480px) {
+        width: 100%;
+      }
+    }
+  }
 }
