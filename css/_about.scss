@@ -71,6 +71,27 @@
         margin: auto;
       }
     }
+    .info {
+      .name {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        small {
+          font-size: 1rem;
+        }
+      }
+      .icon-envelope {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        color: $mc-deep;
+      }
+      .email {
+        display: inline-block;
+        vertical-align: middle;
+        color: $mc-deep;
+        text-decoration: none;
+      }
+    }
   }
   .list_sty1{
     flex-wrap: wrap;

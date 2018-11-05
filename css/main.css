@@ -1868,6 +1868,14 @@ footer .copyright { padding: 10px; text-align: center; }
 
 #about .introduction .photo img { width: 100%; max-width: 200px; margin: auto; }
 
+#about .introduction .info .name { font-size: 2rem; margin-bottom: 1rem; }
+
+#about .introduction .info .name small { font-size: 1rem; }
+
+#about .introduction .info .icon-envelope { display: inline-block; vertical-align: middle; margin-right: 10px; color: #0A4958; }
+
+#about .introduction .info .email { display: inline-block; vertical-align: middle; color: #0A4958; text-decoration: none; }
+
 #about .list_sty1 { -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
 #about .list_sty1 li { width: 25%; padding: 5vmin 3vmin; }
